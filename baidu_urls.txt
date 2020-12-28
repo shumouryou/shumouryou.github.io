@@ -1,3 +1,4 @@
+https://mouryou.space/2020/12/28/summary2020/
 https://mouryou.space/2020/07/21/summaryinthefirsthalfof2020/
 https://mouryou.space/2019/08/01/newvps/
 https://mouryou.space/2019/06/01/changeip/
@@ -7,4 +8,3 @@ https://mouryou.space/2019/02/24/ubuntunet/
 https://mouryou.space/2019/02/24/2020kaoyan/
 https://mouryou.space/2019/02/18/pythonbaiduocr/
 https://mouryou.space/2019/02/17/pycharmopendata/
-https://mouryou.space/2019/02/13/siteincluded/
