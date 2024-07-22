@@ -21,7 +21,7 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
     <link rel="icon" href="/img/favicon.ico">
-    <h1>test3</h1>
+    <h1>test4</h1>
 
 </head>
 
@@ -198,29 +198,32 @@
       </script>
   </div>
 
-
-        </div>
-         
-
-          <audio id="bgMusic" loop autoplay>
+<audio id="background-music" loop>
   <source src="/img/wmws.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var bgMusic = document.getElementById('bgMusic');
+  var music = document.getElementById('background-music');
 
-  // 监听用户的交互事件，例如点击事件，停止音乐播放
+  // Check if the audio is already playing
+  if (music.paused) {
+    music.play();
+  }
+
+  // Pause the music when the user interacts with the page
   document.addEventListener('click', function() {
-    // 检查音乐是否正在播放
-    if (!bgMusic.paused) {
-      bgMusic.pause(); // 暂停音乐
-      bgMusic.currentTime = 0; // 重置音乐播放位置
+    if (music.paused) {
+      music.play();
     }
   });
 });
 </script>
+        </div>
+         
+
+          <br>
   <p class="h6" align="center">Powered by love each other!</p>
 </div>
 </body>
