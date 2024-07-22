@@ -26,10 +26,6 @@
 
 <body>
     
-    <audio autoplay loop>
-    <source src="/img/wmws.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-    </audio>
 
         <div>
             <div class="container-fluid position-relative">
@@ -2815,14 +2811,50 @@
   </div>
 </div>
 
+<audio id="bgMusic" loop>
+  <source src="/img/wmws.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
+<button id="toggleButton" style="display: none;" onclick="toggleMusic()">Toggle Music</button>
 
+<script>
+// 获取音频元素
+var bgMusic = document.getElementById('bgMusic');
+// 定义一个标志变量，用于追踪音乐是否正在播放
+var musicPlaying = false;
+
+// 播放/暂停音乐的函数
+function toggleMusic() {
+  if (musicPlaying) {
+    bgMusic.pause();
+    musicPlaying = false;
+  } else {
+    bgMusic.play();
+    musicPlaying = true;
+  }
+}
+
+// 在页面加载后，自动播放音乐（如果允许），或者等待用户交互后再播放
+document.addEventListener('DOMContentLoaded', function() {
+  var playPromise = bgMusic.play();
+  
+  if (playPromise !== undefined) {
+    playPromise.then(function() {
+      // 自动播放已开始
+      musicPlaying = true;
+    }).catch(function(error) {
+      // 自动播放被阻止，需要用户交互后播放
+      console.log('自动播放被阻止:', error);
+    });
+  }
+});
+
+</script>
         </div>
          
 
           <br>
-  <br>
-  <br>
   <p class="h6" align="center">Powered by love each other!</p>
 </div>
 </body>
