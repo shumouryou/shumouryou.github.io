@@ -21,6 +21,7 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
     <link rel="icon" href="/img/favicon.ico">
+    <h1>test1</h1>
 
 </head>
 
@@ -202,41 +203,18 @@
   Your browser does not support the audio element.
 </audio>
 
-<div id="playButton" style="cursor: pointer;">
-  点击这里播放音乐
-</div>
-
 <script>
-var bgMusic = document.getElementById('bgMusic');
-var playButton = document.getElementById('playButton');
-var musicPlaying = false;
-
-// 当用户点击播放按钮时触发
-playButton.addEventListener('click', function() {
-  if (!musicPlaying) {
-    var playPromise = bgMusic.play();
-    if (playPromise !== undefined) {
-      playPromise.then(function() {
-        musicPlaying = true;
-      }).catch(function(error) {
-        console.log('自动播放被阻止:', error);
-      });
-    }
-  }
-});
-
-// 在页面加载后，如果允许自动播放，则尝试自动播放音乐
 document.addEventListener('DOMContentLoaded', function() {
-  var playPromise = bgMusic.play();
-  if (playPromise !== undefined) {
-    playPromise.then(function() {
-      musicPlaying = true;
-    }).catch(function(error) {
-      console.log('自动播放被阻止:', error);
-      // 显示提示用户手动播放的内容
-      playButton.style.display = 'block';
-    });
-  }
+  var bgMusic = document.getElementById('bgMusic');
+
+  // 监听用户的交互事件，例如点击事件，停止音乐播放
+  document.addEventListener('click', function() {
+    // 检查音乐是否正在播放
+    if (!bgMusic.paused) {
+      bgMusic.pause(); // 暂停音乐
+      bgMusic.currentTime = 0; // 重置音乐播放位置
+    }
+  });
 });
 </script>
 
