@@ -21,7 +21,30 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
     <link rel="icon" href="/img/favicon.ico">
-    <h1>test5</h1>
+    <h1>test6</h1>
+
+<audio id="background-music" loop>
+  <source src="/img/wmws.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var music = document.getElementById('background-music');
+
+  // Check if the audio is already playing
+  if (music.paused) {
+    music.play();
+  }
+
+  // Pause the music when the user interacts with the page
+  document.addEventListener('click', function() {
+    if (music.paused) {
+      music.play();
+    }
+  });
+});
+</script>
 
 </head>
 
@@ -126,28 +149,6 @@
 </div>
 
 
-<audio id="background-music" loop>
-  <source src="/img/wmws.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var music = document.getElementById('background-music');
-
-  // Check if the audio is already playing
-  if (music.paused) {
-    music.play();
-  }
-
-  // Pause the music when the user interacts with the page
-  document.addEventListener('click', function() {
-    if (music.paused) {
-      music.play();
-    }
-  });
-});
-</script>
         </div>
          
 
